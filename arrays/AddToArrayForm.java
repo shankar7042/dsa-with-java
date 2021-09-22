@@ -1,4 +1,4 @@
-package arrays;
+// https://leetcode.com/problems/add-to-array-form-of-integer/
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -15,9 +15,11 @@ public class AddToArrayForm {
         List<Integer> res = new ArrayList<>(n);
         int i = n - 1;
         while (i >= 0 || k > 0) {
-            k += num[i];
+            if(i >= 0) 
+                k += num[i];
             res.add(k % 10);
             k /= 10;
+            i--;
         }
         Collections.reverse(res);
         return res;
